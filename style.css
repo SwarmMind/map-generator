@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #aaa;
+}
+
+input{
+    background: #eee;
+    box-shadow: 1em 1em 1em dimgrey;
+}
+
+container{
+    display: grid;
+    margin: 150px 0 0 250px;
+}
+
+box{
+    display: block;
+    background: #eee;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+button{
+    background: orange;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 2px;
+}
+
+selection{
+    position: fixed;
+    display: block;
+    top: 200px;
+}
+
+selection div{
+    background: #ccc;
+    padding: 5px 7px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+selection div:hover{
+    background: #ddd;
+}
+
+.active{
+    background: #ddd;
+}
+
+.example{
+    float: left;
+    margin-right: 8px;
+}
+
+.player-spawn{
+    background: aqua;
+}
+
+.npc-spawn{
+    background: aquamarine;
+}
+
+.blockade{
+    background: orange;
+}
+
+#download{
+    position: fixed;
+    top: 350px;
+}
