@@ -145,7 +145,8 @@ class MapGenerator{
     toggleSelection(box, position){
         box.style.background =
             (box.style.background === '' || box.style.background === 'rgb(238, 238, 238)' ? selectionImplication.color : '#eee');
-        this.selectionStore[Math.floor(position / this.width)][position % this.width] = selectionImplication.value;
+        const field = this.selectionStore[Math.floor(position / this.width)][position % this.width];
+        this.selectionStore[Math.floor(position / this.width)][position % this.width] = field === 0 ? selectionImplication.value : 0;
     }
 
     fillContainer(width, height){
