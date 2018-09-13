@@ -143,8 +143,8 @@ class MapGenerator{
     }
 
     toggleSelection(box, position){
-        box.style.background =
-            (box.style.background === '' || box.style.background === 'rgb(238, 238, 238)' ? selectionImplication.color : '#eee');
+        box.style.background = (box.isTriggered ? '#eee' : selectionImplication.color);
+        box.isTriggered = !box.isTriggered;
         const field = this.selectionStore[Math.floor(position / this.width)][position % this.width];
         this.selectionStore[Math.floor(position / this.width)][position % this.width] = field === 0 ? selectionImplication.value : 0;
     }
@@ -163,6 +163,7 @@ class MapGenerator{
         const boxCount = this.width * this.height;
         for(let i = 0; i < boxCount; i++){
             let box = makeHTMLElm('box');
+            box.isTriggered = false;
             box.addEventListener('click', (e) => {
                 this.toggleSelection(box, i);
             });
@@ -287,6 +288,3 @@ selectElement(document.getElementById('selection-blockade'), 0);
 document.getElementById('download').addEventListener('click', function(e){
     generator.downloadMap();
 });
-
-
-
